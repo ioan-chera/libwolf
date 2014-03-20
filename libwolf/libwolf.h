@@ -3,6 +3,14 @@
 
 #include <stdint.h>
 
+#ifdef _WIN32
+#ifdef BUILD_DLL
+#define DECLSPEC __declspec(dllexport)
+#else
+#define DECLSPEC __declspec(dllimport)
+#endif
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -24,12 +32,12 @@ typedef enum wolf3d_LoadFileResult
 
 typedef struct wolf3d_LevelSet *wolf3d_LevelSetRef;
 
-wolf3d_LevelSetRef wolf3d_LevelSetCreate(void);
-wolf3d_LoadFileResult wolf3d_LevelSetOpenFile(wolf3d_LevelSetRef levelset, const char* mapheadpath, const char* gamemapspath);
-wolf3d_LoadFileResult wolf3d_LevelSetLoadMap(wolf3d_LevelSetRef levelset, unsigned mapnum);
-uint16_t* wolf3d_LevelSetGetMap(wolf3d_LevelSetRef levelset, unsigned mapnum, unsigned plane);
-void wolf3d_LevelSetCloseFile(wolf3d_LevelSetRef pointer);
-void wolf3d_LevelSetDestroy(wolf3d_LevelSetRef pointer);
+DECLSPEC wolf3d_LevelSetRef wolf3d_LevelSetCreate(void);
+DECLSPEC wolf3d_LoadFileResult wolf3d_LevelSetOpenFile(wolf3d_LevelSetRef levelset, const char* mapheadpath, const char* gamemapspath);
+DECLSPEC wolf3d_LoadFileResult wolf3d_LevelSetLoadMap(wolf3d_LevelSetRef levelset, unsigned mapnum);
+DECLSPEC uint16_t* wolf3d_LevelSetGetMap(wolf3d_LevelSetRef levelset, unsigned mapnum, unsigned plane);
+DECLSPEC void wolf3d_LevelSetCloseFile(wolf3d_LevelSetRef pointer);
+DECLSPEC void wolf3d_LevelSetDestroy(wolf3d_LevelSetRef pointer);
 
 #ifdef __cplusplus
 }

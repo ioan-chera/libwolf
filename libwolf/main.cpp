@@ -1,6 +1,8 @@
 // libwolf.cpp : Defines the entry point for the console application.
 //
 
+#if 0
+
 #include "stdafx.h"
 #include "libwolf.h"
 
@@ -27,3 +29,4 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 }
 
+#endif
