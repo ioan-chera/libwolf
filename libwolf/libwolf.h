@@ -34,6 +34,7 @@ typedef struct wolf3d_LevelSet *wolf3d_LevelSetRef;
 
 DECLSPEC wolf3d_LevelSetRef wolf3d_LevelSetCreate(void);
 DECLSPEC wolf3d_LoadFileResult wolf3d_LevelSetOpenFile(wolf3d_LevelSetRef levelset, const char* mapheadpath, const char* gamemapspath);
+DECLSPEC wolf3d_LoadFileResult wolf3d_LevelSetOpenFileW(wolf3d_LevelSetRef levelset, const wchar_t* mapheadpath, const wchar_t* gamemapspath);
 DECLSPEC wolf3d_LoadFileResult wolf3d_LevelSetLoadMap(wolf3d_LevelSetRef levelset, unsigned mapnum);
 DECLSPEC uint16_t* wolf3d_LevelSetGetMap(wolf3d_LevelSetRef levelset, unsigned mapnum, unsigned plane);
 DECLSPEC void wolf3d_LevelSetCloseFile(wolf3d_LevelSetRef pointer);

@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <wchar.h>
 #include "libwolf.h"
 
 #define lengthof(a) (sizeof(a) / sizeof(*(a)))
@@ -29,21 +30,17 @@ wolf3d_LevelSet* wolf3d_LevelSetCreate(void)
 	return newset;
 }
 
-wolf3d_LoadFileResult wolf3d_LevelSetOpenFile(wolf3d_LevelSet* levelset, const char* mapheadpath, const char* gamemapspath)
+static wolf3d_LoadFileResult openMapHead(FILE *f, uint16_t* newRlewTag, uint32_t* headeroffsets)
 {
-	FILE* f = fopen(mapheadpath, "rb");
-	uint16_t newRlewTag;
-
 	if (!f)
 		return wolf3d_LoadFileCannotOpen;
-	
-	if (fread(&newRlewTag, 2, 1, f) != 1)
+
+	if (fread(newRlewTag, 2, 1, f) != 1)
 	{
 		fclose(f);
 		return wolf3d_LoadFileBadFormat;
 	}
-	
-	uint32_t headeroffsets[WOLF3D_NUMMAPS];
+		
 	if (fread(headeroffsets, 4, WOLF3D_NUMMAPS, f) != WOLF3D_NUMMAPS)
 	{
 		fclose(f);
@@ -51,14 +48,18 @@ wolf3d_LoadFileResult wolf3d_LevelSetOpenFile(wolf3d_LevelSet* levelset, const c
 	}
 
 	fclose(f);
-	
-	f = fopen(gamemapspath, "rb");
+
+	return wolf3d_LoadFileOk;
+}
+
+static wolf3d_LoadFileResult openGameMaps(FILE *f, const uint32_t* headeroffsets, maptype* newMapheaderseg)
+{
 	if (!f)
 		return wolf3d_LoadFileCannotOpen;
 
 	int i;
 	uint32_t pos;
-	maptype newMapheaderseg[WOLF3D_NUMMAPS], *m;
+	maptype *m;
 	for (i = 0; i < WOLF3D_NUMMAPS; ++i)
 	{
 		pos = headeroffsets[i];
@@ -71,38 +72,88 @@ wolf3d_LoadFileResult wolf3d_LevelSetOpenFile(wolf3d_LevelSet* levelset, const c
 			return wolf3d_LoadFileBadFormat;
 		}
 		m = newMapheaderseg + i;
-		if (fread(m->planestart, 1, sizeof(m->planestart),  f) != sizeof(m->planestart))
+		if (fread(m->planestart, 1, sizeof(m->planestart), f) != sizeof(m->planestart))
 		{
 			fclose(f);
 			return wolf3d_LoadFileBadFormat;
 		}
-		if (fread(m->planelength, 1, sizeof(m->planelength),  f) != sizeof(m->planelength))
+		if (fread(m->planelength, 1, sizeof(m->planelength), f) != sizeof(m->planelength))
 		{
 			fclose(f);
 			return wolf3d_LoadFileBadFormat;
 		}
-		if (fread(&m->width, 1, sizeof(m->width),  f) != sizeof(m->width))
+		if (fread(&m->width, 1, sizeof(m->width), f) != sizeof(m->width))
 		{
 			fclose(f);
 			return wolf3d_LoadFileBadFormat;
 		}
-		if (fread(&m->height, 1, sizeof(m->height),  f) != sizeof(m->height))
+		if (fread(&m->height, 1, sizeof(m->height), f) != sizeof(m->height))
 		{
 			fclose(f);
 			return wolf3d_LoadFileBadFormat;
 		}
-		if (fread(m->name, 1, sizeof(m->name),  f) != sizeof(m->name))
+		if (fread(m->name, 1, sizeof(m->name), f) != sizeof(m->name))
 		{
 			fclose(f);
 			return wolf3d_LoadFileBadFormat;
 		}
 	}
+
+	return wolf3d_LoadFileOk;
+}
+
+wolf3d_LoadFileResult wolf3d_LevelSetOpenFile(wolf3d_LevelSet* levelset, const char* mapheadpath, const char* gamemapspath)
+{
+	FILE* f = fopen(mapheadpath, "rb");
+	uint16_t newRlewTag;
+	uint32_t headeroffsets[WOLF3D_NUMMAPS];
+	maptype newMapheaderseg[WOLF3D_NUMMAPS];
+
+	wolf3d_LoadFileResult result = openMapHead(f, &newRlewTag, headeroffsets);
+
+	if (result != wolf3d_LoadFileOk)
+		return result;
+	
+	f = fopen(gamemapspath, "rb");
+
+	result = openGameMaps(f, headeroffsets, newMapheaderseg);
+	if (result != wolf3d_LoadFileOk)
+		return result;
+	
 	// all ok
 	memcpy(levelset->mapheaderseg, newMapheaderseg, sizeof(levelset->mapheaderseg));
 	wolf3d_LevelSetCloseFile(levelset);
 	levelset->file = f;
 	levelset->rlewTag = newRlewTag;
 
+	return wolf3d_LoadFileOk;
+}
+
+wolf3d_LoadFileResult wolf3d_LevelSetOpenFileW(wolf3d_LevelSet* levelset, const wchar_t* mapheadpath, const wchar_t* gamemapspath)
+{
+#ifdef _WIN32
+	FILE* f = _wfopen(mapheadpath, L"rb");
+	uint16_t newRlewTag;
+	uint32_t headeroffsets[WOLF3D_NUMMAPS];
+	maptype newMapheaderseg[WOLF3D_NUMMAPS];
+
+	wolf3d_LoadFileResult result = openMapHead(f, &newRlewTag, headeroffsets);
+
+	if (result != wolf3d_LoadFileOk)
+		return result;
+
+	f = _wfopen(gamemapspath, L"rb");
+
+	result = openGameMaps(f, headeroffsets, newMapheaderseg);
+	if (result != wolf3d_LoadFileOk)
+		return result;
+
+	// all ok
+	memcpy(levelset->mapheaderseg, newMapheaderseg, sizeof(levelset->mapheaderseg));
+	wolf3d_LevelSetCloseFile(levelset);
+	levelset->file = f;
+	levelset->rlewTag = newRlewTag;
+#endif
 	return wolf3d_LoadFileOk;
 }
 
