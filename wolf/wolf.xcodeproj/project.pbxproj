@@ -1,0 +1,230 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F6DCA0218DC1BCD00F05373 /* libwolf.c in Sources */ = {isa = PBXBuildFile; fileRef = 4F6DCA0018DC1BCD00F05373 /* libwolf.c */; };
+		4F6DCA0318DC1BCD00F05373 /* libwolf.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F6DCA0118DC1BCD00F05373 /* libwolf.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F6DC9F918DC1BBD00F05373 /* libwolf.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libwolf.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F6DCA0018DC1BCD00F05373 /* libwolf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = libwolf.c; path = ../libwolf/libwolf.c; sourceTree = "<group>"; };
+		4F6DCA0118DC1BCD00F05373 /* libwolf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libwolf.h; path = ../libwolf/libwolf.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F6DC9F618DC1BBD00F05373 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F6DC9F018DC1BBD00F05373 = {
+			isa = PBXGroup;
+			children = (
+				4F6DCA0018DC1BCD00F05373 /* libwolf.c */,
+				4F6DCA0118DC1BCD00F05373 /* libwolf.h */,
+				4F6DC9FA18DC1BBD00F05373 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F6DC9FA18DC1BBD00F05373 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F6DC9F918DC1BBD00F05373 /* libwolf.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4F6DC9F718DC1BBD00F05373 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F6DCA0318DC1BCD00F05373 /* libwolf.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4F6DC9F818DC1BBD00F05373 /* wolf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F6DC9FD18DC1BBD00F05373 /* Build configuration list for PBXNativeTarget "wolf" */;
+			buildPhases = (
+				4F6DC9F518DC1BBD00F05373 /* Sources */,
+				4F6DC9F618DC1BBD00F05373 /* Frameworks */,
+				4F6DC9F718DC1BBD00F05373 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wolf;
+			productName = wolf;
+			productReference = 4F6DC9F918DC1BBD00F05373 /* libwolf.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F6DC9F118DC1BBD00F05373 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = ichera;
+			};
+			buildConfigurationList = 4F6DC9F418DC1BBD00F05373 /* Build configuration list for PBXProject "wolf" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4F6DC9F018DC1BBD00F05373;
+			productRefGroup = 4F6DC9FA18DC1BBD00F05373 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F6DC9F818DC1BBD00F05373 /* wolf */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F6DC9F518DC1BBD00F05373 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F6DCA0218DC1BCD00F05373 /* libwolf.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4F6DC9FB18DC1BBD00F05373 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_DYLIB_INSTALL_NAME = "@loader_path/libwolf.dylib";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4F6DC9FC18DC1BBD00F05373 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_DYLIB_INSTALL_NAME = "@loader_path/libwolf.dylib";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4F6DC9FE18DC1BBD00F05373 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4F6DC9FF18DC1BBD00F05373 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F6DC9F418DC1BBD00F05373 /* Build configuration list for PBXProject "wolf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F6DC9FB18DC1BBD00F05373 /* Debug */,
+				4F6DC9FC18DC1BBD00F05373 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F6DC9FD18DC1BBD00F05373 /* Build configuration list for PBXNativeTarget "wolf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F6DC9FE18DC1BBD00F05373 /* Debug */,
+				4F6DC9FF18DC1BBD00F05373 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F6DC9F118DC1BBD00F05373 /* Project object */;
+}

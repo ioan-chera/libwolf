@@ -63,7 +63,7 @@ static wolf3d_LoadFileResult openGameMaps(FILE *f, const uint32_t* headeroffsets
 	for (i = 0; i < WOLF3D_NUMMAPS; ++i)
 	{
 		pos = headeroffsets[i];
-		if (pos < 0)
+		if ((int32_t)pos < 0)
 			continue;
 
 		if (fseek(f, pos, SEEK_SET))

@@ -9,6 +9,8 @@
 #else
 #define DECLSPEC __declspec(dllimport)
 #endif
+#else
+#define DECLSPEC
 #endif
 
 #ifdef __cplusplus

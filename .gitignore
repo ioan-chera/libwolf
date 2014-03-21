@@ -154,3 +154,6 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+wolf.xccheckout
+wolf/wolf.xcodeproj/project.xcworkspace/xcuserdata
+wolf/wolf.xcodeproj/xcuserdata
