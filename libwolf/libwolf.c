@@ -283,7 +283,7 @@ wolf3d_LoadFileResult wolf3d_LevelSetLoadMap(wolf3d_LevelSet* levelset, unsigned
 {
 	int32_t bufferseg[BUFFERSIZE / 4];
 
-	if (!levelset->file)
+	if (!levelset->file || mapnum >= WOLF3D_NUMMAPS)
 		return wolf3d_LoadFileCannotOpen;
 
 	unsigned size = WOLF3D_MAPAREA * 2;
