@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F6DCA0218DC1BCD00F05373 /* libwolf.c in Sources */ = {isa = PBXBuildFile; fileRef = 4F6DCA0018DC1BCD00F05373 /* libwolf.c */; };
-		4F6DCA0318DC1BCD00F05373 /* libwolf.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F6DCA0118DC1BCD00F05373 /* libwolf.h */; };
+		4FFE845D2118D62500B721F9 /* libwolf.c in Sources */ = {isa = PBXBuildFile; fileRef = 4F6DCA0018DC1BCD00F05373 /* libwolf.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4F6DC9F918DC1BBD00F05373 /* libwolf.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libwolf.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F6DCA0018DC1BCD00F05373 /* libwolf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = libwolf.c; path = ../libwolf/libwolf.c; sourceTree = "<group>"; };
 		4F6DCA0118DC1BCD00F05373 /* libwolf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libwolf.h; path = ../libwolf/libwolf.h; sourceTree = "<group>"; };
+		4FFE84592118D61600B721F9 /* libwolf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libwolf.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4F6DC9F618DC1BBD00F05373 /* Frameworks */ = {
+		4FFE84562118D61600B721F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,7 +39,7 @@
 		4F6DC9FA18DC1BBD00F05373 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4F6DC9F918DC1BBD00F05373 /* libwolf.dylib */,
+				4FFE84592118D61600B721F9 /* libwolf.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,24 +47,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4F6DC9F718DC1BBD00F05373 /* Headers */ = {
+		4FFE84572118D61600B721F9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F6DCA0318DC1BCD00F05373 /* libwolf.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4F6DC9F818DC1BBD00F05373 /* wolf */ = {
+		4FFE84582118D61600B721F9 /* wolf */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F6DC9FD18DC1BBD00F05373 /* Build configuration list for PBXNativeTarget "wolf" */;
+			buildConfigurationList = 4FFE845A2118D61600B721F9 /* Build configuration list for PBXNativeTarget "wolf" */;
 			buildPhases = (
-				4F6DC9F518DC1BBD00F05373 /* Sources */,
-				4F6DC9F618DC1BBD00F05373 /* Frameworks */,
-				4F6DC9F718DC1BBD00F05373 /* Headers */,
+				4FFE84552118D61600B721F9 /* Sources */,
+				4FFE84562118D61600B721F9 /* Frameworks */,
+				4FFE84572118D61600B721F9 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -73,8 +71,8 @@
 			);
 			name = wolf;
 			productName = wolf;
-			productReference = 4F6DC9F918DC1BBD00F05373 /* libwolf.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
+			productReference = 4FFE84592118D61600B721F9 /* libwolf.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -84,6 +82,13 @@
 			attributes = {
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = ichera;
+				TargetAttributes = {
+					4FFE84582118D61600B721F9 = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 66L236F264;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 4F6DC9F418DC1BBD00F05373 /* Build configuration list for PBXProject "wolf" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -97,17 +102,17 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4F6DC9F818DC1BBD00F05373 /* wolf */,
+				4FFE84582118D61600B721F9 /* wolf */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4F6DC9F518DC1BBD00F05373 /* Sources */ = {
+		4FFE84552118D61600B721F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F6DCA0218DC1BCD00F05373 /* libwolf.c in Sources */,
+				4FFE845D2118D62500B721F9 /* libwolf.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,19 +218,47 @@
 			};
 			name = Release;
 		};
-		4F6DC9FE18DC1BBD00F05373 /* Debug */ = {
+		4FFE845B2118D61600B721F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 66L236F264;
 				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		4F6DC9FF18DC1BBD00F05373 /* Release */ = {
+		4FFE845C2118D61600B721F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 66L236F264;
 				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -241,11 +274,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F6DC9FD18DC1BBD00F05373 /* Build configuration list for PBXNativeTarget "wolf" */ = {
+		4FFE845A2118D61600B721F9 /* Build configuration list for PBXNativeTarget "wolf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4F6DC9FE18DC1BBD00F05373 /* Debug */,
-				4F6DC9FF18DC1BBD00F05373 /* Release */,
+				4FFE845B2118D61600B721F9 /* Debug */,
+				4FFE845C2118D61600B721F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
