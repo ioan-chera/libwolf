@@ -11,6 +11,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F6195FE21BD6054007287D6 /* libwolf.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = libwolf.hpp; path = ../libwolf/libwolf.hpp; sourceTree = "<group>"; };
 		4F6DCA0018DC1BCD00F05373 /* libwolf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = libwolf.c; path = ../libwolf/libwolf.c; sourceTree = "<group>"; };
 		4F6DCA0118DC1BCD00F05373 /* libwolf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libwolf.h; path = ../libwolf/libwolf.h; sourceTree = "<group>"; };
 		4FFE84592118D61600B721F9 /* libwolf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libwolf.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +33,7 @@
 			children = (
 				4F6DCA0018DC1BCD00F05373 /* libwolf.c */,
 				4F6DCA0118DC1BCD00F05373 /* libwolf.h */,
+				4F6195FE21BD6054007287D6 /* libwolf.hpp */,
 				4F6DC9FA18DC1BBD00F05373 /* Products */,
 			);
 			sourceTree = "<group>";
