@@ -42,6 +42,10 @@ namespace wolf3d
         {
             return wolf3d_LevelSetOpenFileW(mRef, mapheadpath, gamemapspath);
         }
+        wolf3d_LoadFileResult loadMap(unsigned mapnum)
+        {
+            return wolf3d_LevelSetLoadMap(mRef, mapnum);
+        }
         uint16_t *getMap(unsigned mapnum, unsigned plane)
         {
             return wolf3d_LevelSetGetMap(mRef, mapnum, plane);
